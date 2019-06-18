@@ -1,0 +1,17 @@
+<h1>
+  {{title}}
+</h1>
+
+<form [formGroup]="parentForm">
+    <label for="firstName">First Name
+      <input type="text" name="firstName" id="firstName" tabIndex="1" formControlName="firstName">
+    </label>
+    <br>
+    <label for="lastName">Last Name
+      <input type="text" name="lastName" id="lastName" tabIndex="1" formControlName="lastName">
+    </label>
+    <br>
+    <ccf-child-input-component [parentForm]="parentForm"></ccf-child-input-component>
+    <br>
+    <button type="submit" [disabled]="parentForm.invalid" (click)="submitForm()">Submit</button>
+</form>
